@@ -5,6 +5,9 @@ from leetcode import *
 import os
 import sys
 import pyttsx3
+from speech2text import recognize_speech_from_mic
+
+
 
 app = Flask(__name__)
 
@@ -35,13 +38,16 @@ def root():
 			d_log.append(description)
 			return render_template('index.html', messages=chat_log)
 		else:
-			message = request.form['message']
+			#message = request.form['message']
+			message = recognize_speech_from_mic()
 			question = QuestionList[len(messages_log) - 1]
 			response = goodResponseList[len(messages_log) - 2]
 			chat_log.append(message)
 			messages_log.append(message)
 			if len(chat_log) > 2:
 				chat_log.append(response)
+				engine.say(response)
+				engine.runAndWait()
 			chat_log.append(question)
 			engine.say(question)
 			engine.runAndWait()
