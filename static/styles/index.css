@@ -1,3 +1,31 @@
 body {
-	/*background-color: blue;*/
+	background-color: #ece9d8 !important;
+	font-family: 'Roboto', sans-serif !important;
+	font-size: 24px !important;
+	text-align: center !important;
+}
+
+li{
+	margin-top: 20px !important;
+	margin-bottom: 20px !important;
+}
+ul {
+	list-style-type: none;
+}
+
+#send {
+	margin-top: 20px;
+	width: 300px;
+	height: 50px;
+}
+
+#message {
+	text-align: center !important;
+	width: 700px;
+	margin: 0 auto;
+	float: none;
+}
+
+h2 {
+	margin-bottom: 40px !important;
 }

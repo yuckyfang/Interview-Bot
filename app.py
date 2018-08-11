@@ -23,6 +23,7 @@ def root():
 
 			if len(d_log) > 0:
 				print('HELLO')
+				chat_log.append("Thanks for your response. Here's the solution:")
 				chat_log.append(solution)
 				return render_template('index.html', messages=chat_log)			
 			chat_log.append('Please answer this coding question: ')

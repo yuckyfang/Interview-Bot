@@ -34,20 +34,23 @@ class Question:
         
 
 def get_random_question(difficulty='Easy'):
-    base_url = 'https://leetcode.com/api/problems/algorithms/?difficulty='
-    r = requests.get(base_url + difficulty)
-    response_json = json.loads(r.text) 
-    all_questions = response_json['stat_status_pairs']
-    questions_with_articles = []
-    for i in range(len(all_questions)):
-        if all_questions[i]['stat']['question__article__live']:
-            questions_with_articles.append(all_questions[i])
+    try:
+        base_url = 'https://leetcode.com/api/problems/algorithms/?difficulty='
+        r = requests.get(base_url + difficulty)
+        response_json = json.loads(r.text) 
+        all_questions = response_json['stat_status_pairs']
+        questions_with_articles = []
+        for i in range(len(all_questions)):
+            if all_questions[i]['stat']['question__article__live']:
+                questions_with_articles.append(all_questions[i])
     
-    random_number = random.randint(0, len(questions_with_articles))
+        random_number = random.randint(0, len(questions_with_articles))
     
-    random_question = questions_with_articles[random_number]['stat']
-    slug = random_question['question__title_slug']
+        random_question = questions_with_articles[random_number]['stat']
+        slug = random_question['question__title_slug']
     
-    return Question(slug)
+        return Question(slug)
+    except:
+        get_random_question()
 
 
