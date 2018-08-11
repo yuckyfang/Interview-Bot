@@ -2,9 +2,11 @@ from flask import Flask, render_template, request
 from P import QuestionList, goodResponseList
 import random
 from leetcode import *
+import pyttsx3
 
 app = Flask(__name__)
 
+engine = pyttsx3.init()
 messages_log = []
 chat_log = []
 d_log = []
@@ -39,6 +41,8 @@ def root():
 			if len(chat_log) > 2:
 				chat_log.append(response)
 			chat_log.append(question)
+			engine.say(question)
+			engine.runAndWait()
 			return render_template('index.html', messages=chat_log)
 	
 
