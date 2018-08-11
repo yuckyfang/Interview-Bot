@@ -46,69 +46,69 @@ badResponseList = ["I rarely hear of that one. Interesting.",
                    " work environment.",
                    "Hmmm...Interesting..."
                    ]
-def getResponse(responseList):
-    userResponse = input("Your Answer: ")
-    sentence = userResponse.split()
-    if any(x in responseList for x in sentence):
-        return 1;
-    else:
-        return 0;
+# def getResponse(responseList):
+#     userResponse = input("Your Answer: ")
+#     sentence = userResponse.split()
+#     if any(x in responseList for x in sentence):
+#         return 1;
+#     else:
+#         return 0;
 
-print("Hi, do you need a glass of water or anything? If so, let me know.\n"
-      "My name is John Smith. What do you think of the weather today?\n")
+# print("Hi, do you need a glass of water or anything? If so, let me know.\n"
+#       "My name is John Smith. What do you think of the weather today?\n")
 
-positiveResponse = ["great", "good", "sunny", "perfect", "amazing"]
+# positiveResponse = ["great", "good", "sunny", "perfect", "amazing"]
 
-if getResponse(positiveResponse) == 1:
-    print("That's great to hear.")
-else:
-    print("Yeah, it could be better.")
+# if getResponse(positiveResponse) == 1:
+#     print("That's great to hear.")
+# else:
+#     print("Yeah, it could be better.")
 
-print("Anyway, I\'m the hiring manager here and we\'re looking for a candidate for the position of Tech Developer.\n"
-      "I heard you were interested in the position. Could you tell me what got you interested in programming?\n")
-positiveResponse = ["fun", "joy", "creative", "exciting", "love", "changing lives", "puzzle", "build", "create", "learn"]
+# print("Anyway, I\'m the hiring manager here and we\'re looking for a candidate for the position of Tech Developer.\n"
+#       "I heard you were interested in the position. Could you tell me what got you interested in programming?\n")
+# positiveResponse = ["fun", "joy", "creative", "exciting", "love", "changing lives", "puzzle", "build", "create", "learn"]
 
-if getResponse(positiveResponse) == 1:
-    print("Hmmm... That's pretty interesting to hear. Sounds like you're really into programming.")
-else:
-    print("Hmmm... It doesn't seem like you're too passionate about programming.")
-usedQuestions = [-1, -1, -1]
+# if getResponse(positiveResponse) == 1:
+#     print("Hmmm... That's pretty interesting to hear. Sounds like you're really into programming.")
+# else:
+#     print("Hmmm... It doesn't seem like you're too passionate about programming.")
+# usedQuestions = [-1, -1, -1]
 
-def ask(index):
-    print(QuestionList[index])
-    if index == 0 | index == 2 | index == 4:
-        PositiveResponse = ["c", "c plus plus", "java", "ruby", "c sharp", "java script", "swift"]
-    if index == 1:
-        PositiveResponse = ["documentation", "fun", "boring", "figuring", "hard"]
-    if index == 3:
-        PositiveResponse = ["difficult", "learn", "learned", "fun", "challenging", "interesting"]
-    if index == 5:
-        PositiveResponse = ["teamwork", "work", "leadership", "cooperative", "team player", "hard", "worker",
-                            "motivated", "quick", "fast", "learner", "team"]
-    if index == 6:
-        PositiveResponse = ["love", "interesting", "interested", "help", "learn", "build", "create", "opportunity"]
-    if index == 7:
-        PositiveResponse = ["manager", "head", "create", "start", "new", "lead", "leader", "leadership", "owner"]
-    if index == 8:
-        PositiveResponse = ["yes", "creative", "thinking", "box", "learner", "learn", "team", "flexible"]
-    if index == 9:
-        PositiveResponse = ["fit", "perfect", "team", "hard", "computer", "create", "program", "programming", "flexible"]
-    if index == 10:
-        PositiveResponse = ["yes", "not", "fit", "interested", "unfair", "work", "good", "pay", "unethical", "hard"]
-    if index == 11:
-        PositiveResponse = ["friendly", "cooperative", "clean", "fairly", "paid", "understanding", "understand"]
-    if index == 12:
-        PositiveResponse = ["documentation"]
-    goodResponse = goodResponseList[index]
-    badResponse = badResponseList[index]
-    if getResponse(PositiveResponse) == 1:
-        print(goodResponse)
-    else:
-        print(badResponse)
+# def ask(index):
+#     print(QuestionList[index])
+#     if index == 0 | index == 2 | index == 4:
+#         PositiveResponse = ["c", "c plus plus", "java", "ruby", "c sharp", "java script", "swift"]
+#     if index == 1:
+#         PositiveResponse = ["documentation", "fun", "boring", "figuring", "hard"]
+#     if index == 3:
+#         PositiveResponse = ["difficult", "learn", "learned", "fun", "challenging", "interesting"]
+#     if index == 5:
+#         PositiveResponse = ["teamwork", "work", "leadership", "cooperative", "team player", "hard", "worker",
+#                             "motivated", "quick", "fast", "learner", "team"]
+#     if index == 6:
+#         PositiveResponse = ["love", "interesting", "interested", "help", "learn", "build", "create", "opportunity"]
+#     if index == 7:
+#         PositiveResponse = ["manager", "head", "create", "start", "new", "lead", "leader", "leadership", "owner"]
+#     if index == 8:
+#         PositiveResponse = ["yes", "creative", "thinking", "box", "learner", "learn", "team", "flexible"]
+#     if index == 9:
+#         PositiveResponse = ["fit", "perfect", "team", "hard", "computer", "create", "program", "programming", "flexible"]
+#     if index == 10:
+#         PositiveResponse = ["yes", "not", "fit", "interested", "unfair", "work", "good", "pay", "unethical", "hard"]
+#     if index == 11:
+#         PositiveResponse = ["friendly", "cooperative", "clean", "fairly", "paid", "understanding", "understand"]
+#     if index == 12:
+#         PositiveResponse = ["documentation"]
+#     goodResponse = goodResponseList[index]
+#     badResponse = badResponseList[index]
+#     if getResponse(PositiveResponse) == 1:
+#         print(goodResponse)
+#     else:
+#         print(badResponse)
 
-for x in range(3):
-    newQuestion = random.randint(0, 12)
-    while newQuestion in usedQuestions:
-        newQuestion = random.randint(0, 12)
-    usedQuestions[x] = newQuestion
-    ask(newQuestion)
+# for x in range(3):
+#     newQuestion = random.randint(0, 12)
+#     while newQuestion in usedQuestions:
+#         newQuestion = random.randint(0, 12)
+#     usedQuestions[x] = newQuestion
+#     ask(newQuestion)

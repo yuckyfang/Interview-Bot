@@ -51,5 +51,3 @@ def get_random_question(difficulty='Easy'):
     return Question(slug)
 
 
-random_question = get_random_question()
-print(random_question.get_solution())
